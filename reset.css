@@ -1,0 +1,96 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+textarea,
+select,
+button {
+  font-size: inherit;
+}
+
+ul, li {
+  list-style: none;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 1px solid greenyellow;
+  outline-offset: 5px;
+  border-radius: 3px;
+}
+
+/* 
+Respecting user preferences is key for modern websites, 
+and browsers are exposing more and more features to enable web developers to do so. 
+Not everyone likes decorative animations or transitions, 
+and some users outright experience motion sickness when faced with parallax scrolling, zooming effects, 
+and so on. 
+*/
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}
+
+/* 
+The prefers-color-scheme CSS media feature is used to detect if the user has requested a light or dark color theme.
+The user might indicate this preference through an operating system setting (e.g. light or dark mode) or a user agent setting.
+ */
+@media (prefers-color-scheme: dark) {
+  .day.dark-scheme {
+    background: #333;
+    color: white;
+  }
+  .night.dark-scheme {
+    background: black;
+    color: #ddd;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .day.light-scheme {
+    background: white;
+    color: #555;
+  }
+  .night.light-scheme {
+    background: #eee;
+    color: black;
+  }
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
